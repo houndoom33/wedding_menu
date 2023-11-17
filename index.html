@@ -32,9 +32,10 @@
             padding: 0px;
             /* background: linear-gradient(135deg, #3494E6, #EC6EAD); */
             /* background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12); */
-            /* background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(222,168,248,1) 0%, rgba(168,222,248,1) 21.8%, rgba(189,250,205,1) 35.6%, rgba(243,250,189,1) 52.9%, rgba(250,227,189,1) 66.8%, rgba(248,172,172,1) 90%, rgba(254,211,252,1) 99.7% ); */
-            background-image: radial-gradient( circle farthest-corner at 10% 20%,  #008793, #00bf72, rgba(4,0,4,1) 90% );
-            color: #fff;
+            background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(222,168,248,1) 0%, rgba(168,222,248,1) 21.8%, rgba(189,250,205,1) 35.6%, rgba(243,250,189,1) 52.9%, rgba(250,227,189,1) 66.8%, rgba(248,172,172,1) 90%, rgba(254,211,252,1) 99.7% );
+            /* background-image: radial-gradient( circle farthest-corner at 10% 20%,  #00bf72, rgba(4,0,4,1) 90% ); */
+            /* background-image: linear-gradient( 109.6deg,  rgba(61,245,167,1) 11.2%, rgba(9,111,224,1) 91.1% ); */
+            /* color: #fff; */
         }
 
         header {
@@ -66,7 +67,7 @@
         .menu-item {
             display: flex;
             justify-content: space-between;
-            border-bottom: 1px solid #ddd;
+            border-bottom: 1px solid #000000;
             padding: 0.5em 0;
             font-family: 'Gowun Dodum', sans-serif;
             /* color: #ffffff;    */
@@ -144,12 +145,72 @@
             clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
             animation: glitter 1.5s infinite linear;
         }
+
+        .card-container {
+            background-color: #000;
+            color: #fff;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+
+        .sign {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  span {
+    font-size: 5.6rem;
+    text-align: center;
+    line-height: 1;
+    color: #c6e2ff;
+    animation: neon .08s ease-in-out infinite alternate;
+  }
+
+}
+
+/*-- Animation Keyframes --*/
+
+@keyframes neon {
+  from {
+    text-shadow:
+    0 0 6px rgba(202,228,225,0.92),
+    0 0 30px rgba(202,228,225,0.34),
+    0 0 12px rgba(30,132,242,0.52),
+    0 0 21px rgba(30,132,242,0.92),
+    0 0 34px rgba(30,132,242,0.78),
+    0 0 54px rgba(30,132,242,0.92);
+  }
+  to {
+    text-shadow:
+    0 0 6px rgba(202,228,225,0.98),
+    0 0 30px rgba(202,228,225,0.42),
+    0 0 12px rgba(30,132,242,0.58),
+    0 0 22px rgba(30,132,242,0.84),
+    0 0 38px rgba(30,132,242,0.88),
+    0 0 60px rgba(30,132,242,1);
+  }
+}
+
+.menu-card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
     </style>
 </head>
 
 <body>
     <header>
-        <h1>Wedding Menu <p style="font-size: 20px; text-align: center;">Souvik weds Mahua<span id="playMusic" class="play-icon" onclick="toggleMusic()">
+        <h1 class="sign">Wedding Menu <p style="font-size: 20px; text-align: center;">Souvik weds Mahua<span id="playMusic" class="play-icon" onclick="toggleMusic()">
             <img id="playPauseIcon" src="play.png" alt="Play Icon" width="20" height="20"></span>
             </p>
         </div></h1>
@@ -197,7 +258,7 @@
             <span  id="extra-specifications">Live Counter</span>
         </div>
         <div class="menu-item">
-            <span>Dahi Puri</span>
+            <span>Dahi Papri</span>
             <span  id="extra-specifications">Live Counter</span>
         </div>
         <div class="menu-item">
