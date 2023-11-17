@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com"> -->
+    <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet"> -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cherry+Swash&family=Fredericka+the+Great&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Katibeh&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+
+
+    <title>Wedding Menu</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0px;
+            /* background: linear-gradient(135deg, #3494E6, #EC6EAD); */
+            /* background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12); */
+            /* background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(222,168,248,1) 0%, rgba(168,222,248,1) 21.8%, rgba(189,250,205,1) 35.6%, rgba(243,250,189,1) 52.9%, rgba(250,227,189,1) 66.8%, rgba(248,172,172,1) 90%, rgba(254,211,252,1) 99.7% ); */
+            background-image: radial-gradient( circle farthest-corner at 10% 20%,  #008793, #00bf72, rgba(4,0,4,1) 90% );
+            color: #fff;
+        }
+
+        header {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+            display: flex;
+            align-items: center;
+            justify-content: center; 
+            font-family: 'Cinzel', serif;
+                        /* flex-direction: column;  */
+            /* Set flex direction to column */
+
+        }
+
+        section {
+            padding: 2em;
+        }
+
+        .menu-category {
+            font-size: 2em;
+            font-weight: bold;
+            margin-top: 1em;
+            /* color: #ffffff;    */
+            font-family: 'Cherry Swash', serif;
+        }
+
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5em 0;
+            font-family: 'Gowun Dodum', sans-serif;
+            /* color: #ffffff;    */
+
+        }
+        .menu-category, .menu-item{
+            color: #000000;   
+        }
+
+        .menu-item span {
+            max-width: 70%;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .menu-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        .background-music {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            background-color: #ffcc00;
+            color: #333;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .background-music:hover {
+            text-decoration: underline;
+        }
+
+        audio {
+            display: none;
+        }
+        .play-icon {
+         margin-left: 10px; /* Add a margin to create space between the text and the icon */
+         cursor: pointer;
+       
+
+}
+#extra-specifications {
+  visibility: hidden;
+}
+.play-icon {
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* align-items: center; */
+    cursor: pointer;
+}
+/* .wedding-info { */
+            /* margin-top: 80px; Add margin between lines */
+        /* } */
+        @keyframes glitter {
+            to {
+                transform: translateX(100%);
+            }
+        }
+        h1.glitter {
+            font-size: 3em;
+            position: relative;
+            display: inline-block;
+        }
+
+        h1.glitter::before {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: #fff;
+            overflow: hidden;
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            animation: glitter 1.5s infinite linear;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Wedding Menu <p style="font-size: 20px; text-align: center;">Souvik weds Mahua<span id="playMusic" class="play-icon" onclick="toggleMusic()">
+            <img id="playPauseIcon" src="play.png" alt="Play Icon" width="20" height="20"></span>
+            </p>
+        </div></h1>
+        <!-- <div class="wedding-info">
+            <div id="playMusic" class="play-icon" onclick="toggleMusic()">
+                <img id="playPauseIcon" src="play.png" alt="Play Icon" width="30" height="30">
+            </div>
+        </div> -->
+         <!-- <idv style="white-space: pre-line"> Souvik weds Mahua</idv> -->   
+    </div>
+    </header>
+
+    <section>
+        <div class="menu-category">Starters - Veg</div>
+        <div class="menu-item">
+            <span>Dahi ke sholey</span>
+            <span id="extra-specifications">Chaffing Dish & Rotation</span>
+        </div>
+        <div class="menu-item">
+            <span>Aanchari paneer tikka</span>
+            <span  id="extra-specifications">Chaffing Dish & Rotation</span>
+        </div>
+        <div class="menu-item">
+            <span>Stuffed crispy fried mushroom</span>
+            <span  id="extra-specifications">Chaffing Dish & Rotation</span>
+        </div>
+
+        <div class="menu-category">Starters - Non-Veg</div>
+        <div class="menu-item">
+            <span>Chicken seekh kebab</span>
+            <span  id="extra-specifications">Chaffing Dish & Rotation</span>
+        </div>
+        <div class="menu-item">
+            <span>Kandhari chicken</span>
+            <span  id="extra-specifications">Chaffing Dish & Rotation</span>
+        </div>
+        <div class="menu-item">
+            <span>Amritsari fish fry (Basa)</span>
+            <span  id="extra-specifications">Chaffing Dish & Rotation</span>
+        </div>
+
+        <div class="menu-category">Chaat Live counter</div>
+        <div class="menu-item">
+            <span>Pasta (white & Red Sauce)</span>
+            <span  id="extra-specifications">Live Counter</span>
+        </div>
+        <div class="menu-item">
+            <span>Dahi Puri</span>
+            <span  id="extra-specifications">Live Counter</span>
+        </div>
+        <div class="menu-item">
+            <span>Pani Puri (Sweet & pudina flavour)</span>
+            <span  id="extra-specifications">Live Counter</span>
+        </div>
+        
+          <div class="menu-category">Soup - Veg</div>
+        <div class="menu-item">
+            <span>Cream of Tomato</span>
+            <span  id="extra-specifications">Buffet Layout</span>
+        </div>
+
+        <div class="menu-category">Soup - Non-Veg</div>
+        <div class="menu-item">
+            <span>Lemon coriander chicken</span>
+            <span  id="extra-specifications">Buffet Layout</span>
+        </div>
+
+        <div class="menu-category">Main Course - Veg</div>
+        <div class="menu-item">
+            <span>Stemed Rice</span>
+            <span  id="extra-specifications">Buffet Layout</span>
+        </div>
+        <div class="menu-item">
+            <span>Chef Special Pulao</span>
+            <span  id="extra-specifications">Buffet Layout</span>
+        </div>
+        <div class="menu-item">
+            <span>Assorted Breads (Kulch / Roti / Butter Naan)</span>
+            <span  id="extra-specifications">Buffet Layout</span>
+        </div>
+        <div class="menu-item">
+            <span>Yellow Dal Fry</span>
+            <span  id="extra-specifications">Buffet Layout</span>
+        </div>
+        <div class="menu-item">
+            <span>Navratan Korma</span>
+            <span  id="extra-specifications">Buffet Layout</span>
+        </div>
+        <div class="menu-item">
+            <span>Malai Kofta Curry</span>
+            <span  id="extra-specifications">Buffet Layout</span>
+        </div>
+
+        <div class="menu-category">Main Course - Non-Veg</div>
+        <div class="menu-item">
+            <span>Chicken Biryani (with Bone)</span>
+            <span  id="extra-specifications">Buffet Layout</span>
+        </div>
+        <div class="menu-item">
+            <span>Mutton Rogan Josh (with Bone)</span>
+            <span  id="extra-specifications">Buffet Layout</span>
+        </div>
+        <div class="menu-item">
+            <span>Fish in Lemon Butter Sauce</span>
+            <span  id="extra-specifications">Buffet Layout</span>
+        </div>
+        <div class="menu-item">
+            <span>Chingri Malai Curry (Golda Chingri with Shell)</span>
+            <span  id="extra-specifications">Buffet Layout</span>
+        </div>
+        
+        
+        <div class="menu-category">Salads - Veg</div>
+        <div class="menu-item">
+            <span>Russian Salad</span>
+            <span  id="extra-specifications">Buffet Layout</span>
+        </div>
+        <div class="menu-item">
+            <span>Garlic Butter Mushroom Salad</span>
+            <span  id="extra-specifications">Buffet Layout</span>
+        </div>
+        <div class="menu-item">
+            <span>Cottage Cheese Salad</span>
+            <span  id="extra-specifications">Buffet Layout</span>
+        </div>
+        <div class="menu-item">
+            <span>Green Salad</span>
+            <span  id="extra-specifications">Buffet Layout</span>
+        </div>
+        <div class="menu-item">
+            <span>Pasta Salad</span>
+            <span  id="extra-specifications">Buffet Layout</span>
+        </div>
+
+        <div class="menu-category">Curd - Veg</div>
+        <div class="menu-item">
+            <span>Raita</span>
+            <span  id="extra-specifications">Buffet Layout</span>
+        </div>
+
+        <div class="menu-category">Accompaniments - Veg</div>
+        <div class="menu-item">
+            <span>Papad Fry (1/2 shape)</span>
+            <span  id="extra-specifications">Buffet Layout</span>
+        </div>
+        <div class="menu-item">
+            <span>Lemon Wedges</span>
+            <span  id="extra-specifications">Buffet Layout</span>
+        </div>
+        <div class="menu-item">
+            <span>Pickled Onion</span>
+            <span  id="extra-specifications">Buffet Layout</span>
+        </div>
+
+        <div class="menu-category">Dips - Veg</div>
+        <div class="menu-item">
+            <span>Garlic Mayo (with Starter)</span>
+            <span></span>
+        </div>
+        <div class="menu-item">
+            <span>Mint Chutney (with Starter)</span>
+            <span></span>
+        </div>
+        <div class="menu-item">
+            <span>Garlic Chutney (with Starter)</span>
+            <span></span>
+        </div>
+        
+        
+        <div class="menu-category">Desserts - Veg</div>
+        <div class="menu-item">
+            <span>Brownie</span>
+            <span  id="extra-specifications">Buffet Layout</span>
+        </div>
+        <div class="menu-item">
+            <span>Moon Dal Halwa</span>
+            <span  id="extra-specifications">Buffet Layout</span>
+        </div>
+        <div class="menu-item">
+            <span>Angoori Gulab Jamun</span>
+            <span  id="extra-specifications">Buffet Layout</span>
+        </div>
+        <div class="menu-item">
+            <span>Keshri Phirni</span>
+            <span  id="extra-specifications">Buffet Layout</span>
+        </div>
+        <div class="menu-item">
+            <span>Sweet Chutney</span>
+            <span  id="extra-specifications">Buffet Layout</span>
+        </div>
+        <div class="menu-item">
+            <span>Jalebi (Live)</span>
+            <span></span>
+        </div>
+
+        <div class="menu-category">Ice-cream - Veg</div>
+        <div class="menu-item">
+            <span>Vanilla</span>
+            <span></span>
+        </div>
+        <div class="menu-item">
+            <span>Strawberry</span>
+            <span></span>
+        </div>
+
+        <div class="menu-category">Paan - Veg (Live)</div>
+        <div class="menu-item">
+            <span>Sada & Meetha</span>
+            <span></span>
+        </div>
+
+        <div class="menu-category">Water</div>
+        <div class="menu-item">
+            <span>Water (Counter)</span>
+            <span  id="extra-specifications">Layout</span>
+        </div>
+
+
+    <div class="background-music" onclick="toggleMusic()">
+        🎵 Play Music
+    </div>
+    <audio id="backgroundAudio" loop>
+        <source src="music11.mp3" type="audio/mp3">
+        Your browser does not support the audio tag.
+    </audio>
+
+    <script>
+        // function toggleMusic() {
+        //     var audio = document.getElementById('backgroundAudio');
+        //     if (audio.paused) {
+        //         audio.play();
+        //     } else {
+        //         audio.pause();
+        //     }
+        // }
+        function toggleMusic() {
+        var audio = document.getElementById('backgroundAudio');
+        var playPauseIcon = document.getElementById('playPauseIcon');
+
+        if (audio.paused) {
+            audio.play();
+            playPauseIcon.src = 'pause1.png'; // Change to pause icon
+        } else {
+            audio.pause();
+            playPauseIcon.src = 'play.png'; // Change to play icon
+        }
+    }
+    </script>
+    </script>
+
+
+        <!-- Add more categories and items as needed -->
+
+    </section>
+</body>
+
+</html>
